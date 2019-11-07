@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import Dollar from "./images/dollar.png";
 import Arrow from "./images/arrow.png";
-import Arrowup from "./images/arrowup.png";
 
 function App() {
-  const [currency, setCurrency] = useState(0);
-  const [convertedCurrency, setConvertedCurrency] = useState(0);
-
-  let euro = 1;
-  let dollar = 1.139283;
+  const [currency, setCurrency] = useState("");
 
   return (
     <>
@@ -28,14 +23,7 @@ function App() {
           />
         </div>
 
-        <form
-          onSubmit={event => {
-            event.preventDefault();
-
-            let newValue = (currency * dollar) / euro;
-            setConvertedCurrency(newValue);
-          }}
-        >
+        <form>
           <p>
             <input
               type="text"
@@ -48,22 +36,12 @@ function App() {
             />
             €
           </p>
-          <div className="arrow">
-            <button name="down" type="submit">
-              <img
-                src={Arrow}
-                alt="arrow"
-                style={{ height: "50px", width: "50px" }}
-              />
-            </button>
-
-            <button name="up" type="submit">
-              <img
-                src={Arrowup}
-                alt="arrowup"
-                style={{ height: "50px", width: "50px" }}
-              />
-            </button>
+          <div>
+            <img
+              src={Arrow}
+              alt="arrow"
+              style={{ height: "50px", width: "50px" }}
+            />
           </div>
 
           <p>
@@ -71,10 +49,7 @@ function App() {
               type="text"
               name="toconverted"
               placeholder="0"
-              value={convertedCurrency}
-              onChange={event => {
-                setConvertedCurrency(event.target.value);
-              }}
+              value={currency * 1.139283}
             />
             $
           </p>
