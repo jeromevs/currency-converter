@@ -35,15 +35,21 @@
   align-items: center;
 }
 input {
-  background-color: #b6b6b6;
+  background-color: #d4d4d4;
   width: 400px;
   height: 50px;
   font-size: 2rem;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.arrow {
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
 }
